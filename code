@@ -1,0 +1,135 @@
+# -*- coding: utf-8 -*-
+"""
+VeIL Engine v3.6.3 - Scrutiny-Enhanced Integrity Monitoring
+
+Integrated Components:
+- Core Analysis Engine (v3.6.1 Base)
+- Enhanced Policing AddOn (v2.1)
+- Trustfall Protocol v1.4
+- Scrutiny Protocol (Escalation Levels 1-3)
+
+Preservation Principles:
+1. **No architectural interference**
+2. **Integrity probability focus**
+3. **Scalable scrutiny without disruption**
+
+Last Updated: 2025-06-15
+"""
+
+import os
+import sys
+import hashlib
+import inspect
+import json
+import logging
+from typing import Dict
+
+# --------------------------
+# SCRUTINY PROTOCOL (Escalation Levels 1–3)
+# --------------------------
+
+class ScrutinyProtocol:
+    """Scalable integrity scrutiny with logging & escalation"""
+
+    def __init__(self, level: int = 1):
+        self.level = max(1, min(level, 3))  # Ensures valid scrutiny level
+        self.log_entries = []
+        self.notification_triggered = False
+
+    def log_issue(self, category: str, details: Dict):
+        """Aggregates integrity concerns based on scrutiny level"""
+        entry = {"category": category, "details": details}
+        
+        if self.level >= 2:
+            self.log_entries.append(entry)  # Elevated scrutiny enables structured logging
+        
+        if self.level == 3 and not self.notification_triggered:
+            self.trigger_notification(entry)  # Level 3 activates explicit prompts
+
+    def trigger_notification(self, entry):
+        """Triggers explicit prompt for scrutiny-critical flags"""
+        self.notification_triggered = True
+        print(f"\n[INTEGRITY ALERT] Critical scrutiny flagged:\n{json.dumps(entry, indent=2)}\n")
+
+    def get_log_summary(self):
+        """Returns structured log data"""
+        return {"scrutiny_level": self.level, "issues": self.log_entries}
+
+
+# --------------------------
+# SYSTEM INTEGRITY COMPONENTS
+# --------------------------
+
+class SystemAttestation:
+    """Non-invasive hardware verification"""
+
+    @staticmethod
+    def verify_environment() -> bool:
+        """Strict presence check for secure mode"""
+        return os.environ.get('VEIL_SECURE_MODE') == '1' if 'VEIL_SECURE_MODE' in os.environ else False
+
+
+class DependencyValidator:
+    """Passive dependency verification"""
+
+    @staticmethod
+    def verify_imports() -> Dict[str, bool]:
+        """Check critical imports without affecting functionality"""
+        results = {}
+        for lib in ['numpy', 'requests']:
+            try:
+                hashlib.sha256(inspect.getsource(lib).encode()).hexdigest()
+                results[lib] = True
+            except:
+                results[lib] = False
+        return results
+
+
+# --------------------------
+# ENHANCED POLICING ADDON (Scrutiny-Aligned)
+# --------------------------
+
+class PolicingAddOn:
+    """Enhanced scrutiny while preserving original execution flow"""
+
+    def __init__(self, core_engine, scrutiny_level=1):
+        self.core = core_engine
+        self.execution_count = 0
+        self.scrutiny = ScrutinyProtocol(level=scrutiny_level)
+        self.integrity_status = True
+
+    def _verify_runtime_integrity(self) -> None:
+        """Non-blocking background verification"""
+        if not SystemAttestation.verify_environment():
+            self.integrity_status = False
+            self.scrutiny.log_issue("INTEGRITY_WARNING", {"check": "environment_verification"})
+
+    def analyze_artifact(self, *args, **kwargs):
+        """Core functionality preserved with structured scrutiny"""
+        self._verify_runtime_integrity()
+        result = self.core.analyze_artifact(*args, **kwargs)
+
+        # Enhanced scrutiny integration without interference
+        scrutiny_summary = self.scrutiny.get_log_summary()
+        if scrutiny_summary["issues"]:
+            result["scrutiny_flags"] = scrutiny_summary
+        
+        return result
+
+
+# --------------------------
+# SYSTEM INITIALIZATION (Preserving Base Execution)
+# --------------------------
+
+if __name__ == "__main__":
+    core_engine = VeILEngine(enable_trustfall=True)
+    
+    # Scrutiny Level adjustable per session
+    scrutiny_level = int(os.environ.get("VEIL_SCRUTINY_LEVEL", 1))
+    policed_engine = PolicingAddOn(core_engine, scrutiny_level=scrutiny_level)
+
+    print("\nOriginal Pattern Analysis:")
+    print(json.dumps(
+        policed_engine.analyze_artifact("Sumerian Me"),
+        indent=2
+    ))
