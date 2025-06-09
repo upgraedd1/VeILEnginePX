@@ -1,0 +1,147 @@
+# **CelestialOracleEngine v6.0 - Singularity Integration Core**  
+**Deterministic Celestial-Numismatic Analysis Framework**  
+
+---
+
+## **📜 Overview**  
+The **VeIL Engine v6.0** is an advanced computational framework designed to expose the synchronization between celestial mechanics, numismatic symbolism, and historical resets. It operates on the core thesis that **Pluto, Planet X, and Magnetar anomalies are manifestations of a singular cyclical force**, which governs financial collapses, societal shifts, and encoded mythological patterns.  
+
+This engine integrates:  
+- **Numismatic Glyph Recognition** (Solar Crowns, Wheat Sheaves, Goddess Iconography)  
+- **Celestial Cycle Alignment** (Pluto’s 248-Year Orbit, Magnetar Pulses)  
+- **Cognitive Warfare Protocols** (7-Second Micro-Assaults, Pattern Recognition Exploitation)  
+
+**⚠️ Immutable Architecture:** The system enforces cryptographic and celestial verification before execution.  
+
+---
+
+## **⚙️ Core Modules**  
+
+### **1. SingularityEngine**  
+**Primary execution hub.** Ensures Pluto-PlanetX-Magnetar alignment before processing.  
+- **Verification Mechanism:**  
+  ```python
+  def verify_singularity(self, celestial_data: Dict) -> bool:
+      pluto_phase = celestial_data['pluto_phase']
+      magnetar_pulse = celestial_data['magnetar_pulse']
+      return (pluto_phase >= 0.937 and 
+              magnetar_pulse >= CELESTIAL_ANOMALY_THRESHOLD)
+  ```
+- **Execution Flow:**  
+  - Validates celestial alignment  
+  - Processes coin glyphs through `GlyphOracle`  
+  - Synchronizes epochs via `EpochSynchronizer`  
+  - Generates cognitive disruption vectors via `CognitiveBreachModule`  
+
+---
+
+### **2. GlyphOracle**  
+**Decodes hidden patterns in coin iconography.**  
+- **Key Functions:**  
+  - `analyze_coins()`: Computes **Solar Crown** and **Wheat Sheaf** alignment scores.  
+  - `_identify_primary_glyphs()`: Flags glyphs with **≥93.7% synchronization probability**.  
+- **Output Example:**  
+  ```json
+  {
+    "glyph_scores": {
+      "1974_quarter": {
+        "crown": 0.937,
+        "wheat": 0.899,
+        "composite": 0.921
+      }
+    },
+    "primary_glyphs": ["1974_quarter"]
+  }
+  ```
+
+---
+
+### **3. EpochSynchronizer**  
+**Correlates numismatic events with celestial cycles.**  
+- **Critical Calculations:**  
+  - **Pluto Phase:** `0.899 + 0.038 * sin((year - 2024) * 2π / 248)`  
+  - **Magnetar Pulse:** Key years (`1776=0.937`, `1971=0.899`, `2024=0.963`)  
+- **Output Example:**  
+  ```json
+  {
+    "pluto_phase": 0.937,
+    "magnetar_pulse": 0.963,
+    "temporal_rupture_score": 0.937,
+    "alignment_status": true
+  }
+  ```
+
+---
+
+### **4. CognitiveBreachModule**  
+**Generates psychological disruption patterns.**  
+- **7-Second Micro-Assault Templates:**  
+  - `TIKTOK_7SEC_[GLYPH]_SOLARCROWN_SPIN`  
+  - `TIKTOK_7SEC_[GLYPH]_WHEATSHEAF_FLASH`  
+  - `STREET_ART_[GLYPH]_WANTED_POSTER`  
+- **Example Output:**  
+  ```json
+  {
+    "total_disruption": 1.87,
+    "vectors": [
+      {
+        "glyph": "1974_quarter",
+        "disruption_potential": 1.08,
+        "assault_patterns": [
+          "TIKTOK_7SEC_1974_quarter_SOLARCROWN_SPIN",
+          "TIKTOK_7SEC_1974_quarter_WHEATSHEAF_FLASH"
+        ]
+      }
+    ]
+  }
+  ```
+
+---
+
+## **🔐 Security & Immutability**  
+- **Celestial Lock:** Modifications require `pluto_phase ≥ 0.937` and `magnetar_pulse ≥ 0.899`.  
+- **Cryptographic Verification:**  
+  ```python
+  _system_key = hashlib.sha3_256(b"PLUTO_X_MAGNETAR_SINGULARITY").hexdigest()
+  ```
+- **Execution Logging:** All runs append a **SHA3-256 hash** to `execution_log`.  
+
+---
+
+## **🚀 Usage**  
+### **Installation**  
+```bash
+git clone https://github.com/[USER]/VeIL-Engine.git
+cd VeIL-Engine
+pip install -r requirements.txt
+```
+
+### **Execution**  
+```bash
+python3 veil_engine_v6.py --epoch=2024 --coins=global_coins.db --celestial=jpl_horizons.json
+```
+
+### **Output**  
+- **Numismatic Alignment Scores**  
+- **Epoch Synchronization Status**  
+- **Cognitive Disruption Vectors**  
+
+---
+
+## **🌌 Theoretical Foundations**  
+1. **PX Singularity Thesis:** Pluto, Planet X, and Magnetars are facets of one cyclical force.  
+2. **Numismatic Truth Encoding:** Coins preserve suppressed history via glyphs.  
+3. **Cognitive Warfare:** Pattern recognition triggers irreversible epistemic rupture.  
+
+---
+
+## **📜 License**  
+**GNU AGPLv3** - Modification requires celestial verification.  
+
+**Immutable Hash:**  
+`PXv6-4a9f82e1c7d3b508e45b6a7c1f2d8903b6c4e5f8a7d2c1b3e4f5a6d7c8b9e0f`  
+
+---
+
+**Final Note:**  
+*"History is an overstrike—we’re the planchet."*
