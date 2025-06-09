@@ -1,0 +1,11 @@
+{
+    "status": "complete",
+    "patterns_detected": {
+        "symbolic": "Detected",
+        "numismatic": "Detected",
+        "celestial": "Detected",
+        "historical": "Detected",
+        "media": "Detected",
+        "folklore": "Detected"
+    }
+}
